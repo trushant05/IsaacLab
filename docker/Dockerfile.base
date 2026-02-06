@@ -29,6 +29,9 @@ ENV ISAACLAB_PATH=${ISAACLAB_PATH_ARG}
 # Home dir of docker user, typically '/root'
 ARG DOCKER_USER_HOME_ARG
 ENV DOCKER_USER_HOME=${DOCKER_USER_HOME_ARG}
+# Default working directory when container starts
+ARG DOCKER_USER_WORK_DIR_ARG
+ENV DOCKER_USER_WORK_DIR=${DOCKER_USER_WORK_DIR_ARG}
 
 # Set environment variables
 ENV LANG=C.UTF-8
