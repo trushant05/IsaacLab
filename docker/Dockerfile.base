@@ -9,7 +9,7 @@
 # Base image
 ARG ISAACSIM_BASE_IMAGE_ARG
 ARG ISAACSIM_VERSION_ARG
-FROM ${ISAACSIM_BASE_IMAGE_ARG}:${ISAACSIM_VERSION_ARG} AS base
+FROM ${ISAACSIM_BASE_IMAGE_ARG:-nvcr.io/nvidia/isaac-sim}:${ISAACSIM_VERSION_ARG:-5.1.0} AS base
 ENV ISAACSIM_VERSION=${ISAACSIM_VERSION_ARG}
 
 # Set default RUN shell to bash
@@ -111,4 +111,5 @@ RUN echo "export ISAACLAB_PATH=${ISAACLAB_PATH}" >> ${HOME}/.bashrc && \
 
 # make working directory as the Isaac Lab directory
 # this is the default directory when the container is run
-WORKDIR ${ISAACLAB_PATH}
+# WORKDIR ${ISAACLAB_PATH}
+WORKDIR ${DOCKER_USER_WORK_DIR}

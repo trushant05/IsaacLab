@@ -53,7 +53,7 @@ x-default-isaac-lab-volumes: &default-isaac-lab-volumes
     target: ${DOCKER_ISAACLAB_PATH}/tools
     # ws_aic setup
   - type: bind
-    source: ../
+    source: ../../ws_aic
     target: ${DOCKER_REPO_PATH}
     # The effect of these volumes is twofold:
     # 1. Prevent root-owned files from flooding the _build and logs dir
