@@ -46,7 +46,9 @@ RUN --mount=type=cache,target=/var/cache/apt \
     cmake \
     git \
     libglib2.0-0 \
+    liblttng-ust1 \
     ncurses-term \
+    vim \
     wget && \
     apt -y autoremove && apt clean autoclean && \
     rm -rf /var/lib/apt/lists/*
@@ -101,7 +103,7 @@ RUN ${ISAACLAB_PATH}/isaaclab.sh -p -m pip uninstall -y quadprog
 RUN echo "export ISAACLAB_PATH=${ISAACLAB_PATH}" >> ${HOME}/.bashrc && \
     echo "alias isaaclab=${ISAACLAB_PATH}/isaaclab.sh" >> ${HOME}/.bashrc && \
     echo "alias python=${ISAACLAB_PATH}/_isaac_sim/python.sh" >> ${HOME}/.bashrc && \
-    echo "alias python3=${ISAACLAB_PATH}/_isaac_sim/python.sh" >> ${HOME}/.bashrc && \
+    #echo "alias python3=${ISAACLAB_PATH}/_isaac_sim/python.sh" >> ${HOME}/.bashrc && \
     echo "alias pip='${ISAACLAB_PATH}/_isaac_sim/python.sh -m pip'" >> ${HOME}/.bashrc && \
     echo "alias pip3='${ISAACLAB_PATH}/_isaac_sim/python.sh -m pip'" >> ${HOME}/.bashrc && \
     echo "alias tensorboard='${ISAACLAB_PATH}/_isaac_sim/python.sh ${ISAACLAB_PATH}/_isaac_sim/tensorboard'" >> ${HOME}/.bashrc && \
