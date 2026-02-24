@@ -270,5 +270,5 @@ COPY --from=builder /workspace/build_ws /workspace/isaaclab/build_ws/jazzy/isaac
 
 RUN echo "export COLCON_PYTHON_EXECUTABLE=/isaac-sim/kit/python/bin/python3.11" >> ${HOME}/.bashrc && \
     echo "export RMW_IMPLEMENTATION=rmw_fastrtps_cpp" >> ${HOME}/.bashrc && \
-    echo "source build_ws/jazzy/jazzy_ws/install/local_setup.bash" >> ${HOME}/.bashrc && \
-    echo "source build_ws/jazzy/isaac_sim_ros_ws/install/local_setup.bash" >> ${HOME}/.bashrc
+    echo "source /workspace/IsaacLab/build_ws/jazzy/jazzy_ws/install/local_setup.bash" >> ${HOME}/.bashrc && \
+    echo "source /workspace/IsaacLab/build_ws/jazzy/isaac_sim_ros_ws/install/local_setup.bash" >> ${HOME}/.bashrc
